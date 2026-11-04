@@ -1,0 +1,30 @@
+Source: libmd
+Section: libs
+Priority: optional
+Maintainer: Maxwell <maxwell@blueberrypieos.com>
+Build-Depends: pietoolchain (>= 0.1.0)
+Standards-Version: 4.7.3
+Homepage: https://github.com/apple-oss-distributions/libmd
+Vcs-Git: https://github.com/blueberrypieos/libmd.git -b blueberry-pie-os/latest
+Vcs-Browser: https://github.com/blueberrypieos/libmd
+Rules-Requires-Root: no
+
+Package: libmd
+Architecture: darwin-arm64
+Essential: yes
+Priority: required
+Depends: libsystem
+Description: message digest library (FreeBSD API)
+ FreeBSD's message digest API on CommonCrypto, with MD4, MD5, SHA-0,
+ SHA-1, SHA-224, SHA-256, SHA-384 and SHA-512 helpers.
+ .
+ MD4 is the "RSA Data Security, Inc. MD4 Message-Digest Algorithm".
+ MD5 is the "RSA Data Security, Inc. MD5 Message-Digest Algorithm".
+
+Package: libmd-dev
+Section: libdevel
+Priority: optional
+Architecture: darwin-arm64
+Depends: libmd (= ${binary:Version})
+Description: message digest library (FreeBSD API): development files
+ Headers for building programs against libmd.
